@@ -2,7 +2,14 @@ import React, { Component } from 'react';
 
 export default class ColorRandomizer extends Component {
   render() {
-    return <h1>Hello</h1>;
+    const colors = ['green', 'pink', 'orange'];
+    return (
+      <>
+        {
+          colors.map((color) => (
+            <button key={color}>{color}</button>
+          ))}
+      </>
+    );
   }
-
 }
