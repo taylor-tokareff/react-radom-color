@@ -11,25 +11,20 @@ export default class ColorRandomizer extends Component {
 
   componentDidMount() {
     const colors = ['green', 'pink', 'orange'];
-    const random = colors[Math.floor(Math.random() * colors.length)];
-    this.setState({ selectedColor: random });
+
+    setInterval(() => {
+      const random = colors[Math.floor(Math.random() * colors.length)];
+      this.setState({ selectedColor: random });
+    },
+      1000
+    );
   }
 
-  render() {
-    const colors = ['green', 'pink', 'orange'];
 
-    // const { selectedColor } = this.state;
+  render() {
     return (
       <>
-        {
-          colors.map((color) => (
-            <button
-              key={color}
-              style={{ backgroundColor: color }}
-              onClick={() => this.handleColorChange(color)}>
-              {color}</button>
-          ))
-        }
+
 
 
 
