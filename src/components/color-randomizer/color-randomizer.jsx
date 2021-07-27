@@ -9,9 +9,16 @@ export default class ColorRandomizer extends Component {
     this.setState({ selectedColor: color });
   }
 
+  componentDidMount() {
+    const colors = ['green', 'pink', 'orange'];
+    const random = colors[Math.floor(Math.random() * colors.length)];
+    this.setState({ selectedColor: random });
+  }
+
   render() {
     const colors = ['green', 'pink', 'orange'];
-    const { selectedColor } = this.state;
+
+    // const { selectedColor } = this.state;
     return (
       <>
         {
@@ -28,7 +35,7 @@ export default class ColorRandomizer extends Component {
 
         <div
           style={{
-            backgroundColor: selectedColor,
+            backgroundColor: this.state.selectedColor,
             width: '100px',
             height: '100px'
           }}
