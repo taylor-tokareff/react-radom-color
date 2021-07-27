@@ -15,7 +15,18 @@ export default class ColorRandomizer extends Component {
               {color}</button>
           ))
         }
+
+
+
+        <div
+          style={{
+            backgroundColor: this.state.selectedColor,
+            width: '100px',
+            height: '100px'
+          }}
+        ></div>
       </>
     );
   }
 }
+
